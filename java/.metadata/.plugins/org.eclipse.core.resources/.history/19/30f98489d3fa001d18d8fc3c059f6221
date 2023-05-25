@@ -1,0 +1,19 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Example3 {
+
+	public static void main(String[] args) {
+		
+		String[] st = new String[4];
+		
+		Scanner sc = new Scanner(System.in);
+		for(int i=0; i< st.length; i++) {
+			st[i] = sc.nextLine();
+		}
+		
+		System.out.println(Arrays.toString(st));
+
+	}
+
+}
