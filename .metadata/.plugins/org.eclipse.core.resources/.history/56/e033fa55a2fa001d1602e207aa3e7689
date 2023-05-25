@@ -1,0 +1,8 @@
+package data;
+
+abstract public class Building {
+	private String name;
+	
+	abstract public void action();
+
+}

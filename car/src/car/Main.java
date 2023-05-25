@@ -1,0 +1,14 @@
+package car;
+
+public class Main {
+	
+	public static void main(String[] a) {
+		ElectricCar tesla = new ElectricCar(100);
+		System.out.println(tesla.toString());
+		tesla.changePower();
+		System.out.println(tesla.sound());
+		tesla.go();
+		
+	}
+
+}

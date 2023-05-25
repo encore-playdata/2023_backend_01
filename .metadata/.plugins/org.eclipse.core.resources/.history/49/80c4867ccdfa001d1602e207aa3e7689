@@ -1,0 +1,21 @@
+package car;
+
+public class OilCar extends Car{
+	
+	int gasolin;
+	
+	public OilCar(int gasolin) {
+		super(100, false);
+		this.gasolin = gasolin;
+	}
+
+	public void gasUp(int gasolin) {
+		this.gasolin += gasolin;
+	}
+
+	@Override
+	public String sound() {
+		return "ºü¶óºü¶ó¹ã";
+	}
+
+}

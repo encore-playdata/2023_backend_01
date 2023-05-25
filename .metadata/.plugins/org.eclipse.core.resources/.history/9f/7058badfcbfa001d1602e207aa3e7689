@@ -1,0 +1,16 @@
+package car;
+
+public class ElectricCar extends Car{
+	
+	int battery;
+	
+	public void charge(int cell) {
+		battery += cell;
+	}
+
+	@Override
+	public String sound() {
+		return "快快快快旷";
+	}
+
+}

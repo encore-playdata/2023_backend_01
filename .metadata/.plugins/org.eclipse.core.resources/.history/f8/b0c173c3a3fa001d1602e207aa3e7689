@@ -1,0 +1,9 @@
+package building;
+
+import data.BuildingImpl;
+
+public class Gateway extends BuildingImpl{
+	public Gateway() {
+		super("Gateway");
+	}
+}

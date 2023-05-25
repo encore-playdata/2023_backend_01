@@ -1,0 +1,23 @@
+
+public class Test1 {
+
+	public static void main(String[] args) {
+		// 객체 사전적인 정의로 실제 존재하는 것을 말한다
+		// 클래스 템플릿 
+		// 상속 
+		// 캡슐화
+		// 다형성
+		Person newFace = new Person();
+		newFace.name = "유성호";
+		newFace.age = 29;
+		
+	}
+
+}
+
+class Person{
+	String name;
+	int age;
+}
+
+

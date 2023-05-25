@@ -1,0 +1,5 @@
+package data;
+
+private enum UStatus {
+BUILDING, LIVE, DEAD
+}

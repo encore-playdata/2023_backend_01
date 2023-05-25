@@ -1,0 +1,11 @@
+
+public class Banking {
+
+	public static void main(String[] args) {
+		int money = 50000;
+		int coffee = 2500;
+		System.out.println(money/ coffee);
+
+	}
+
+}

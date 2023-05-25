@@ -1,0 +1,18 @@
+
+public class Study4 {
+
+	public static void main(String[] args) {
+		Coffee 아메리카노 = new Coffee();
+		아메리카노.name = "아메리카노";
+		아메리카노.price = 1400;
+		Coffee 아메리카노1 = new Coffee();
+		아메리카노1.name = "라떄";
+		아메리카노1.price = 3000;
+	}
+
+}
+// 객체
+class Coffee {
+	String name;
+	int price;
+}

@@ -1,0 +1,43 @@
+package data;
+
+public class Unit {
+	private String name;
+	private int hp;
+	private int attackPoint;
+	public Unit(String name, int hp, int attackPoint) {
+		this.name = name;
+		this.attackPoint = attackPoint;
+		this.hp = hp;
+	}
+	public Unit(String name, int attackPoint) {
+		this.name = name;
+		this.attackPoint = attackPoint;
+	}
+	public String attack() {
+		return name+ "∞° " + attackPoint + "µÙ¿ª ¡·Ω¿¥œ¥Ÿ";
+	}
+	public String getDamage(Unit unit) {
+		this.hp = this.hp - unit.getAttackPoint();
+		return name+ "∞° "+ unit.getName()+ "«—≈◊ "
+				+ unit.getAttackPoint() + "µÙ¿ª πﬁæ“¥Ÿ";
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getHp() {
+		return hp;
+	}
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+	public int getAttackPoint() {
+		return attackPoint;
+	}
+	public void setAttackPoint(int attackPoint) {
+		this.attackPoint = attackPoint;
+	}
+	
+}

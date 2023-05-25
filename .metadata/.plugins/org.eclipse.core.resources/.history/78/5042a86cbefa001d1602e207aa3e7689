@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+public class Example2 {
+	public static void main(String[] args) {
+		int[] arr = new int[3]; // array 012
+		
+		List<Integer> list = new ArrayList(); // 길이가 무한
+//		list.add(1);
+//		list.add(2);
+//		list.add(1);
+		Integer[] tmp = (Integer[]) list.toArray();
+		System.out.println(arr.length);
+		System.out.println(list.remove("st"));
+//		System.out.println(list.set(0, 3));
+		System.out.println(list);
+//		123456789 넣고 짝수의 합을 구하자 20
+		List<Integer> list2 = new ArrayList<>();
+	    int sum = 0;
+	    for (int i=1; i<10; i++) {
+	        list2.add(i);
+	    }
+	    for (int i=0; i<list2.size(); i++) {
+	    	if (list2.get(i) % 2 == 0) {
+	            sum += list2.get(i);
+	        }
+	    }
+	    for(Integer i:list2) if(i %2 ==0) sum += i;
+	    System.out.println("짝수의 합:" + " " + sum);
+		
+		
+		
+	}
+}

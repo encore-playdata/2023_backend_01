@@ -1,0 +1,11 @@
+package car;
+
+public class ElectricCar extends Car{
+	
+	int battery;
+	
+	public void charge(int cell) {
+		battery += cell;
+	}
+
+}

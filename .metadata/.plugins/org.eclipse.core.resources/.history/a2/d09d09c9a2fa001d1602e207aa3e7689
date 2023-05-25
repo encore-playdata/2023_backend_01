@@ -1,0 +1,8 @@
+package data;
+
+abstract public class BuildingImpl {
+	private String name;
+	
+	abstract public void action();
+
+}

@@ -1,0 +1,10 @@
+package data;
+
+public class Zealout extends Unit{
+	private int shield;
+	
+	public Zealout(String name, int hp, int attackPoint) {
+		super("Zealout", 100, 12);
+		
+	}
+}

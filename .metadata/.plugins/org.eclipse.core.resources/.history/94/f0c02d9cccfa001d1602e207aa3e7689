@@ -1,0 +1,11 @@
+package car;
+
+public class OilCar extends Car{
+	
+	int gasolin;
+	
+	public void gasUp(int gasolin) {
+		this.gasolin += gasolin;
+	}
+
+}

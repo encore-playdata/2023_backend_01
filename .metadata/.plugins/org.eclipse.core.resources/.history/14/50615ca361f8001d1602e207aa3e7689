@@ -1,0 +1,12 @@
+package test;
+// Á¶°Ç¹®
+public class Study5 {
+	
+	public static void main(String[] args) {
+		// ¹ú·¹°¡ Á×¾ú³ª¿ä
+		// ¿¹ true °ÅÁþ false
+		boolean isDead = true;
+		if()
+		
+	}
+}

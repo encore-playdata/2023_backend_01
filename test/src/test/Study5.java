@@ -1,0 +1,54 @@
+package test;
+// Á¶°Ç¹®
+public class Study5 {
+	
+	public static void main(String[] args) {
+		// ¹ú·¹°¡ Á×¾ú³ª¿ä
+		// ¿¹ true °ÅÁþ false
+		boolean isDead = false;
+		if(isDead) {
+			System.out.println("¹ö¸°´Ù");
+		}else {
+			System.out.println("Á×ÀÎ´Ù");
+		}
+		
+		int i = 7;
+		if(i > 7) {
+			System.out.println("if");
+		}else if(i == 7) {
+			System.out.println("elseif");
+		}else {
+			System.out.println("else");
+		}
+		String hi = "hi";
+		String hi2 = hi + "1";
+		if(!hi2.equals("hi1")) {
+			System.out.println(true);
+		}else {
+			System.out.println(false);
+		}
+		Integer a = 0;
+		Integer b = 0;
+		if(a + 1 != b + 1) 
+			System.out.println("true");
+		System.out.println(hi + "1" == "hi1");
+		System.out.println(hi + "1");
+		// 3Ç×¿¬»êÀÚ 
+		int p = 5;
+//		if(p % 2 ==0) {
+//			System.out.println("Â¦¼ö");
+//		}else {
+//			System.out.println("È¦¼ö");
+//		}
+//		System.out.println(p % 2 == 0 ? "Â¦¼ö" : "È¦¼ö");
+		switch (p % 2) {
+			case 1:
+				System.out.println("È¦¼ö");
+			case 0:
+				System.out.println("Â¦¼ö");
+			default:
+				System.out.println("default");
+				break;
+		}
+	}
+}

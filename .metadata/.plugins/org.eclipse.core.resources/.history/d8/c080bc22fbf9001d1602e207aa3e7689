@@ -1,0 +1,11 @@
+package data;
+
+public class Zealout extends Unit{
+	private int shield;
+	
+	public Zealout(int shield) {
+		super("Zealout", 100, 12);
+		this.shield = shield;
+		
+	}
+}

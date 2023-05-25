@@ -1,0 +1,10 @@
+package car;
+
+public class Main {
+	
+	public static void main(String[] a) {
+		ElectricCar tesla = new ElectricCar();
+		tesla.sound();
+	}
+
+}

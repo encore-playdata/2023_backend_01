@@ -1,0 +1,32 @@
+package test;
+// Á¶°Ç¹®
+public class Study5 {
+	
+	public static void main(String[] args) {
+		// ¹ú·¹°¡ Á×¾ú³ª¿ä
+		// ¿¹ true °ÅÁþ false
+		boolean isDead = false;
+		if(isDead) {
+			System.out.println("¹ö¸°´Ù");
+		}else {
+			System.out.println("Á×ÀÎ´Ù");
+		}
+		
+		int i = 7;
+		if(i > 7) {
+			System.out.println("if");
+		}else if(i == 7) {
+			System.out.println("elseif");
+		}else {
+			System.out.println("else");
+		}
+		String hi = "hi";
+		if(hi+1 == "hi1") {
+			System.out.println(true);
+		}else {
+			System.out.println(false);
+		}
+		
+		
+	}
+}

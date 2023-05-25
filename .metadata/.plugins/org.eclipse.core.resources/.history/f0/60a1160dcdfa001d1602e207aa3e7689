@@ -1,0 +1,7 @@
+package car;
+
+public enum source {
+	BATTERY, 
+	GASOLINE
+
+}

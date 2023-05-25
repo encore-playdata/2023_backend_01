@@ -1,0 +1,49 @@
+
+public class Test1 {
+
+	public static void main(String[] args) {
+		// 객체 사전적인 정의로 실제 존재하는 것을 말한다
+		// 클래스 템플릿 
+		// 다형성
+		// 상속 
+		// 캡슐화
+		Person newFace = new Person();
+		newFace.name = "유성호";
+		newFace.age = 29;
+		Person oldFace = new Person();
+		oldFace.name = "현수정";
+		oldFace.age = 21;
+		String[] names = {"유성호", "현수정"};
+		int[] ages = {29, 21};
+		Person[] persons = new Person[2];
+		for(int i=0; i < persons.length; i++) {
+			Person person = new Person(names[i], ages[i]);
+//			person.name = names[i];
+//			person.age = ages[i];
+			persons[i] = person;
+//			if(i==4) {break;}
+		}
+		// foreach
+		for(Person person:persons) {
+			System.out.println(person.age + " "+ person.name);
+			System.out.println(person.toString());
+		}
+		
+		
+		
+	}
+
+}
+
+class Person{
+	// field
+	String name;
+	int age;
+	// 생성 할떄 쓰인다 : 생성자 constructor
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+}
+
+

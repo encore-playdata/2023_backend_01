@@ -1,0 +1,7 @@
+package data;
+
+public interface Building {
+	
+	
+	public void skill();
+}

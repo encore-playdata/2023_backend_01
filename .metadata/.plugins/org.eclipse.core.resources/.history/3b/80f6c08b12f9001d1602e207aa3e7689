@@ -1,0 +1,53 @@
+
+public class Banking {
+
+	public static void main(String[] args) {
+		int money = 50300;
+		int coffee = 2200;
+//		System.out.println(money / coffee);
+//		System.out.println(money % coffee);
+		// 1900 22
+		// Á¡¿ø ÀÎµ¥ 
+		// °Å½º¸§µ·À» Ãµ¿ø ¸îÀå 500 ¸î°³ 100¿ø ¸î°³ 
+//		int °Å½º¸§µ· = money % coffee;
+//		int[] È­Æó = {1000, 500, 100};
+//		for(int i = 0; i < È­Æó.length; i++) {// 2
+//			//i =0 1 2
+//			if(i == 0) {
+//				System.out.println(°Å½º¸§µ· / È­Æó[i]);
+//			}else {
+//				System.out.println(
+//						(°Å½º¸§µ· 
+//							- ((°Å½º¸§µ· / È­Æó[i-1]) * È­Æó[i-1])) 
+//						/ È­Æó[i]);// 3
+//			}
+//		}
+//		System.out.println(°Å½º¸§µ· / È­Æó[0]);
+//		System.out.println(
+//				(
+//					°Å½º¸§µ· 
+//					- ( (°Å½º¸§µ· / È­Æó[0]) * È­Æó[0])
+//				) 
+//				/ È­Æó[1]);
+//		System.out.println(
+//				(
+//					°Å½º¸§µ· 
+//					- ((°Å½º¸§µ· / È­Æó[1]) * È­Æó[1])
+//				) 
+//				/ È­Æó[2]);
+		int °Å½º¸§µ· = money % coffee; //1900
+		int[] È­Æó = {1000, 500, 100};
+		for(int i = 0; i < È­Æó.length; i++) {
+//			if(È­Æó[i] == 1000 ) continue;
+			System.out.println(È­Æó[i]
+					+" "+
+					°Å½º¸§µ· / È­Æó[i]);
+			°Å½º¸§µ· = °Å½º¸§µ· % È­Æó[i];
+			if(È­Æó[i] == 1000) break;
+		}
+//		50000 -> 10000 -> 5000 -> 1000 ->...-> 10
+		
+		
+	}
+
+}

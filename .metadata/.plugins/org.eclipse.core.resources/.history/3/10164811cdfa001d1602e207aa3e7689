@@ -1,0 +1,26 @@
+package car;
+
+public class ElectricCar extends Car{
+	
+	int battery;
+	
+	public ElectricCar(int battery) {
+		super(200, false);
+		this.battery = battery;
+	}
+	
+	public void charge(int cell) {
+		battery += cell;
+	}
+
+	@Override
+	public String toString() {
+		return "ElectricCar [battery=" + battery + ", maxSpeed=" + maxSpeed + ", power=" + power + "]";
+	}
+
+	@Override
+	public String sound() {
+		return "快快快快旷";
+	}
+
+}

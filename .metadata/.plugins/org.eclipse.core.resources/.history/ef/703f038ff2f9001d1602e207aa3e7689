@@ -1,0 +1,10 @@
+package data;
+
+public class Unit {
+	String name;
+	int hp;
+	int attackPoint;
+	public String attack() {
+		return attackPoint + "µÙ¿ª ¡·Ω¿¥œ¥Ÿ";
+	}
+}

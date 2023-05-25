@@ -1,0 +1,21 @@
+
+public class Banking {
+
+	public static void main(String[] args) {
+		int money = 50300;
+		int coffee = 2200;
+//		System.out.println(money / coffee);
+//		System.out.println(money % coffee);
+		// 1900 22
+		// 점원 인데 
+		// 거스름돈을 천원 몇장 500 몇개 100원 몇개 
+		int 거스름돈 = money % coffee;
+		
+		System.out.println(거스름돈 / 1000);
+		System.out.println((거스름돈
+				- ( (거스름돈 / 1000) * 1000)) 
+				/ 500);
+		
+	}
+
+}

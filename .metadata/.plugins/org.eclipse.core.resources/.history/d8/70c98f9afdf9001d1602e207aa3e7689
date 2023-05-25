@@ -1,0 +1,11 @@
+package unit;
+
+import data.Unit;
+
+public class Zealout extends Unit{
+	private int shield = 100;
+	
+	public Zealout() {
+		super("Zealout", 100, 12);
+	}
+}

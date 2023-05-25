@@ -1,0 +1,20 @@
+package car;
+
+public class Car {
+	int maxSpeed;
+	boolean power;
+	
+	public void changePower() {
+		power = !power;
+	}
+	
+	public String go() {
+		if(power) {
+			return "앞으로 갑니다";
+		} else {
+			return "시동을 걸어주세요";
+		}
+	}
+	abstract public String sound();
+
+}

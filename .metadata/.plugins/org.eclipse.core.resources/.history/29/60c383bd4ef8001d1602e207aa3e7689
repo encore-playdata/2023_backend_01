@@ -1,0 +1,16 @@
+package test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// 글 문자열 
+		// String 
+		// 기본 데이터 타입, 참조 데이터 타입
+		String str = "hello";
+		String world = "world";
+		System.out.println(str + " " + world);
+		
+		
+	}
+
+}

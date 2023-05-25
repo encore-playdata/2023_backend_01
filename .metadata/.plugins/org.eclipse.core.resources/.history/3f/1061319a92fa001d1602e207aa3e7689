@@ -1,0 +1,18 @@
+
+public class Example {
+// static Á¤Àû 
+	public static void main(String[] args) {
+		Test test = new Test();
+		test.a = 1;
+		System.out.println(test.b + " " + Test.b);
+		
+	}
+
+}
+class Test{
+	int a;
+	static int b = 0;
+	public Test() {
+		b++;
+	}
+}
