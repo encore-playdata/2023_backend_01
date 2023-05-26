@@ -11,7 +11,6 @@ public class Example3 {
 	static void controller() {
 		System.out.println("1. insert 2. find 3. findAll 4. Exit");
 		String nextLine = sc.nextLine();
-		
 		int mode = Integer.parseInt(nextLine);
 		selectMode(mode);
 	}
@@ -20,14 +19,17 @@ public class Example3 {
 		String name = sc.nextLine();
 		String ageString = sc.nextLine();
 		int age = Integer.parseInt(ageString);
-		List<Person> orDefault = map.getOrDefault(region, new ArrayList<>());
+		List<Person> orDefault = 
+				map.getOrDefault(region, new ArrayList<>());
 		orDefault.add(new Person(name,age));
 		map.put(region, orDefault);
 		controller();
 	}
 	
 	static void find() {
-		
+		String region = sc.nextLine();
+		if(map.containsKey(region)) System.out.println(map.get(region));
+		controller();
 	}
 	static void findAll() {
 		System.out.println(map);
@@ -44,6 +46,7 @@ public class Example3 {
 	}
 
 }
+
 class Person { 
 	private String name;
 	private int age;
