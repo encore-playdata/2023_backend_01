@@ -31,19 +31,21 @@ public class Test1 {
 	}
 	
 	public static void delete() {
+		System.out.println("키 입력");
 		String key = sc.nextLine();
 		if(isValid(key)) map.remove(key);
 		input();
 	}
+	
 	public static void update() {
-		// 키를 보여주고
-		// 키를 입력하고 value 업데이트
-		
+		System.out.println("키 입력");
+	    String key = sc.nextLine();
+	    System.out.println("바꿀 내용 입력");
+	    String value = sc.nextLine();
+		if(isValid(key)) map.put(key, value);
 		input();
 	}
 	public static void find() {
-		// 키를 보여주고
-		// 키를 입력하고 value 찾기
 		System.out.println("키 입력");
 	    String key = sc.nextLine();
 	    if(isValid(key)) 
@@ -54,13 +56,13 @@ public class Test1 {
 	public static boolean isValid(String key) {
 		if(map.containsKey(key)) 
 	    	return true;
-	    System.out.println("없는 단어");
+	    System.out.println(key + "로된 단어는 없습니다.");
 	    return false;
 	}
 	
 	public static boolean isValid(String key, boolean isInsert) {
 		if(!map.containsKey(key)) return true;
-	    System.out.println("있는 단어");
+	    System.out.println(key + "는 " + map.get(key) + "라고 있는 단어입니다.");
 	    return false;
 	}
 	
