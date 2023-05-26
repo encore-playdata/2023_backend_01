@@ -12,36 +12,30 @@ public class Example2 {
 //		´ëÀü [µµ¾¾] 
 //		Á¦ÁÖ [·ù¾¾] 
 //		¾Èµ¿ []
+//		Æò¾ç
 //		List<Person> persons = new ArrayList<Person>();
 //		persons.add(new Person("¹Ú¾¾",20));
 //		// [¹Ú¾¾]
 //		map.put("¼­¿ï", persons);
-		List<Person> persons1 = map.get("¼­¿ï");
-		// [¹Ú¾¾]
-		persons1.add(new Person("±è¾¾",20));
-		// [¹Ú¾¾, ±è¾¾]
-		System.out.println(map);
-		
-		
-//		List<Person> getList = map.getOrDefault("¼­¿ï", new ArrayList<Person>());
-////		{} [] [¹Ú¾¾]
-//		getList.add(new Person("±è¾¾",20));
-//		// [¹Ú¾¾ , ±è¾¾]
-//		map.put("¼­¿ï", getList);
-//		{¼­¿ï:[¹Ú¾¾]} {¼­¿ï : [¹Ú¾¾ , ±è¾¾]}
+//		List<Person> persons1 = map.get("¼­¿ï");
+//		// [¹Ú¾¾]
+//		persons1.add(new Person("±è¾¾",20));
+//		// [¹Ú¾¾, ±è¾¾]
 //		System.out.println(map);
 		
 		
+		List<Person> getList = map.getOrDefault("¼­¿ï", new ArrayList<Person>());
+//		{} [] [¹Ú¾¾] 
+		getList.add(new Person("±è¾¾",20));
+//		// [¹Ú¾¾ , ±è¾¾]
+		map.put("¼­¿ï", getList);
+//		{¼­¿ï:[¹Ú¾¾], Æò¾ç: [±è]} {¼­¿ï : [¹Ú¾¾ , ±è¾¾]}
+//		System.out.println(map);
+//		find , insert 
+		
+		
 	}
 	
 	
 	
-}
-class Person { 
-	private String name;
-	private int age;
-	public Person(String name, int age) {
-		this.name = name;
-		this.age = age;
-	}
 }

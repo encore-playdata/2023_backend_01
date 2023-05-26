@@ -983,3 +983,9 @@ java.lang.UnsupportedOperationException: Operation only supported in ASTs with p
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+
+!ENTRY org.eclipse.jdt.debug 2 0 2023-05-26 14:31:14.325
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
+
+!ENTRY org.eclipse.jdt.debug 2 0 2023-05-26 14:37:46.358
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
