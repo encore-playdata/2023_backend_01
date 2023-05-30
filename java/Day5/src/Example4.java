@@ -68,6 +68,11 @@ class Person0{
 		this.name = name;
 		this.num = num;
 	}
+	@Override
+	public String toString() {
+		return "{num=" + num + ", name=" + name + ", age=" + age + "}\n";
+	}
+	
 }
 
 
