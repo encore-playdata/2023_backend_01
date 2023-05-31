@@ -9,7 +9,10 @@ public class TestSJ {
     }
 
     static void controller() {
-        System.out.println("1. register 2. exit");
+//        1 . list.add(marine) 상태값 생성중 10  생성완료
+//        1 . list.add(marine) 상태값 생성중 생성중
+//        1 . list.add(marine) 상태값 생성중 생성중
+        System.out.println("1. 마린생성 2. 인덱스를 입력받아서 확인");
         String nextLine = sc.nextLine();
 
         int mode = Integer.parseInt(nextLine);

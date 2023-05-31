@@ -17,11 +17,13 @@ public class MyThread extends Thread{
     public void run(){
         for (int i = 0; i < 5; i++) {
             person.setName("name" + id);
+
             try {
                 Thread.sleep(time);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+
             System.out.println(id);
             System.out.println(person.getName());
 
