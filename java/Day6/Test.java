@@ -21,7 +21,7 @@ public class Test {
 //        set.add(1);
 //        set.add(2);
         System.out.println(set.size());
-//
+
 //        for (Integer i : set) {
 //            System.out.printf("%4.2f 입니다. %d %s\n",
 //                    (float) i * 8000, i, "ㅛㅛㅛㅛ");
