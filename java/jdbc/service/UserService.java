@@ -1,10 +1,7 @@
 package service;
 
-import dto.SignupDto;
+import domain.dto.SignupDto;
 import repository.UserRepository;
-
-import java.security.Provider;
-import java.sql.SQLException;
 
 public class UserService {
     private static UserService service;

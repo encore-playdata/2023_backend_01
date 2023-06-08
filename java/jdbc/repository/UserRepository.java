@@ -1,8 +1,8 @@
 package repository;
 
 import config.JdbcConnection;
-import domain.Me;
-import dto.SignupDto;
+import domain.entity.Me;
+import domain.dto.SignupDto;
 
 import java.sql.*;
 
@@ -17,10 +17,9 @@ public class UserRepository {
         try {
             PreparedStatement psmt = conn.prepareStatement(sql);
             psmt.setString(1, id);
-            psmt.setString(2, password);
+            psmt.setString(2, password + "888");
             ResultSet resultSet = psmt.executeQuery();
             while (resultSet.next()){
-
                 id1 = resultSet.getInt("id");
                 name = resultSet.getString("name");
                 me = new Me(id1, name);

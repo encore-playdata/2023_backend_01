@@ -1,4 +1,4 @@
-package dto;
+package domain.dto;
 
 public class SignupDto {
     private String username;
@@ -7,7 +7,7 @@ public class SignupDto {
 
     public SignupDto(String username, String password, String name) {
         this.username = username;
-        this.password = password;
+        this.password = password + "888";
         this.name = name;
     }
 

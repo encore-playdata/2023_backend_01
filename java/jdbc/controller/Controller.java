@@ -1,6 +1,7 @@
 package controller;
 
-import dto.SignupDto;
+import domain.dto.SignupDto;
+import repository.UserRepository;
 import service.UserService;
 
 import java.util.Scanner;
@@ -18,6 +19,9 @@ public class Controller {
                     break;
                 case "2":
                     signup(sc);
+                    break;
+                case "3":
+                    System.out.println(UserRepository.me);
                     break;
             }
         }

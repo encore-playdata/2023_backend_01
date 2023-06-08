@@ -1,4 +1,4 @@
-package domain;
+package domain.entity;
 
 public class Me {
     private int id;
