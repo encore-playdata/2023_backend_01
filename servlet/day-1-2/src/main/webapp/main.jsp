@@ -13,6 +13,6 @@
 <body>
     <h1>main jsp</h1>
     <b>fsafsadsa</b>
-    <a href="/user">user</a>
+    <a href="/user?id=2">user</a>
 </body>
 </html>

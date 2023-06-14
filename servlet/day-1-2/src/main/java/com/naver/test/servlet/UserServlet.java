@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class UserServlet extends HttpServlet {
     @Override
@@ -12,9 +13,8 @@ public class UserServlet extends HttpServlet {
         req.getRequestDispatcher("user.html").forward(req, resp);
         String id = req.getParameter("id");
         System.out.println(id);
-        System.out.println(req.getRemoteAddr());
-        System.out.println(req.getRemoteUser());
-        System.out.println(req.getRemoteHost());
+        List<Integer> list = LegacyServlet.list;
+        list.add(list.get(list.size()-1)+1);
         super.doGet(req, resp);
     }
 
