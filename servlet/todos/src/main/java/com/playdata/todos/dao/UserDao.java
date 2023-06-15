@@ -1,6 +1,7 @@
 package com.playdata.todos.dao;
 
 import com.playdata.todos.config.JdbcConnection;
+import com.playdata.todos.config.LogoutThread;
 import com.playdata.todos.dto.User;
 
 import java.sql.Connection;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
+    public static User me;
     public void insert(User user){
         Connection conn = new JdbcConnection().getJdbc();
         String sql = "insert into users(username, password, name) " +
@@ -42,7 +44,12 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return users.size() != 0;
+        if(users.size() != 0){
+            me = users.get(0);
+            new LogoutThread().start();
+            return true;
+        }
+        return false;
     }
 
 
@@ -70,7 +77,7 @@ public class UserDao {
             name = null;
         }
         try {
-            createAt = resultSet.getString("createAt");
+            createAt = resultSet.getString("create_at");
         }catch (SQLException e) {
             createAt = null;
         }

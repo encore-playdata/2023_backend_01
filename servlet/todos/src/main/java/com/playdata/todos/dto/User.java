@@ -7,6 +7,17 @@ public class User {
     private String name;
     private String createAt;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", createAt='" + createAt + '\'' +
+                '}';
+    }
+
     public User(Integer id, String username, String password, String name, String createAt) {
         this.id = id;
         this.username = username;
