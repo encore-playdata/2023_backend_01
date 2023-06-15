@@ -11,9 +11,9 @@ public class Example5 {
 				"3\t햄버거\t37.13,127.02\t서울\n" + 
 				"4\t감자탕\t36.13,127.02\t부산";
 		
-//		\n 쪼갠다 하나의 배열에 5요소 가 담겨있다
+//		\n 쪼갠다 하나의 배열에 5요소 가 담겨있다 row
 		String[] arr = excel2.split("\n");
-// 		각 줄에 \t 쪼갠다
+// 		각 줄에 \t 쪼갠다 col
 		List<String[]> list = new ArrayList();
 		for (int i = 1; i < arr.length; i++) {
 			list.add(arr[i].split("\t"));

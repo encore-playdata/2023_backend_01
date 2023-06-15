@@ -1,6 +1,0 @@
-package data;
-
-public class Zealout {
-	private int shield;
-
-}

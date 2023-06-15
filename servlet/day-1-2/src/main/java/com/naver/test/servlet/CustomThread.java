@@ -3,12 +3,11 @@ package com.naver.test.servlet;
 import java.util.List;
 
 public class CustomThread implements Runnable{
-
     public void run() {
         while (true){
 
             try {
-                Thread.sleep(10000 );
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -18,6 +17,5 @@ public class CustomThread implements Runnable{
                 LegacyServlet.list.add(i);
             }
         }
-
     }
 }

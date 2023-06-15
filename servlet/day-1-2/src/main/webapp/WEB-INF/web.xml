@@ -23,7 +23,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>userServlet</servlet-name>
-    <url-pattern>/user</url-pattern>
+    <url-pattern>/user/servlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>LegacyServlet</servlet-name>

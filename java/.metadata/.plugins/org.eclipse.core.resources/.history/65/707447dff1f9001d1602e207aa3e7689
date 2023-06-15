@@ -1,7 +1,0 @@
-package data;
-
-public class Unit {
-	String name;
-	int hp;
-	int attackPoint;
-}
