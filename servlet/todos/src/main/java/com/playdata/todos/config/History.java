@@ -52,7 +52,6 @@ public class History{
         String path = "/login";
 
         HttpSession session = req.getSession();
-        Boolean mode = (Boolean) session.getAttribute("mode");
         Cookie[] cookies = req.getCookies();
 
         Integer index = (Integer) session.getAttribute("index");
@@ -69,7 +68,7 @@ public class History{
         }
         resp.sendRedirect(path);
 
-        session.setAttribute("mode", true);
+        session.setAttribute("histMode", true);
         session.setAttribute("index", (Integer) session.getAttribute("index")-1);
     }
 }

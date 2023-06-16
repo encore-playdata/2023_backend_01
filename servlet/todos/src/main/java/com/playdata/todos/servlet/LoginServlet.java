@@ -27,6 +27,7 @@ public class LoginServlet extends HttpServlet {
 //        resp.addCookie(cookie2);
         HttpSession session = req.getSession();
         session.setAttribute("uname", user.getName());
+        session.setAttribute("uid", user.getId());
 
         if(user != null){
             resp.sendRedirect("/main");

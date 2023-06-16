@@ -50,6 +50,48 @@ public class UserDao {
         }
         return null;
     }
+    public void update(User user){
+        Connection conn = new JdbcConnection().getJdbc();
+        User byId = findById( user.getId());
+        String sql = "update users\n" +
+                "set password = ?,\n" +
+                "    name = ?\n" +
+                "where id = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, user.getPassword().equals("")? byId.getPassword() : user.getPassword());
+            pst.setString(2, user.getName().equals("")? byId.getName(): user.getName());
+            pst.setInt(3, user.getId());
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public User findById(int id){
+        List<User> users = new ArrayList<User>();
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "select *" +
+                "from users " +
+                "where id = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, id);
+
+            ResultSet resultSet = pst.executeQuery();
+            while (resultSet.next()){
+                users.add(makeUser(resultSet));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        if(users.size() != 0){
+            me = users.get(0);
+//            new LogoutThread().start();
+            return users.get(0);
+        }
+        return null;
+    }
 
 
     private User makeUser(ResultSet resultSet){
