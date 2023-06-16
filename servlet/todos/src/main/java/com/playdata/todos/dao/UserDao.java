@@ -1,7 +1,6 @@
 package com.playdata.todos.dao;
 
 import com.playdata.todos.config.JdbcConnection;
-import com.playdata.todos.config.LogoutThread;
 import com.playdata.todos.dto.User;
 
 import java.sql.Connection;
@@ -27,7 +26,7 @@ public class UserDao {
             throw new RuntimeException(e);
         }
     }
-    public boolean login(String id, String password){
+    public User login(String id, String password){
         List<User> users = new ArrayList<User>();
         Connection conn = new JdbcConnection().getJdbc();
         String sql = "select id, username, name, create_at " +
@@ -45,11 +44,11 @@ public class UserDao {
             throw new RuntimeException(e);
         }
         if(users.size() != 0){
-            me = users.get(0);
-            new LogoutThread().start();
-            return true;
+//            me = users.get(0);
+//            new LogoutThread().start();
+            return users.get(0);
         }
-        return false;
+        return null;
     }
 
 
