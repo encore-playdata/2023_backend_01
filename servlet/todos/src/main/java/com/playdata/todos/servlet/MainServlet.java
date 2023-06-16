@@ -36,6 +36,7 @@ public class MainServlet extends HttpServlet {
                     "    <h1>"  + session.getAttribute("uname") + " 환영합니다.</h1>\n" +
 //                    "    <h1>" + UserDao.me.getCreateAt() + " 가입했습니다.</h1>\n" +
                     "    <img src=\"/img/ffsf.png\">\n" +
+                    "   <a href=\"/back\">back</a>\n" +
                     "</body>\n" +
                     "</html>");
             writer.close();
