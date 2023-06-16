@@ -1,5 +1,6 @@
 package com.playdata.todos.servlet;
 
+import com.playdata.todos.config.History;
 import com.playdata.todos.dao.UserDao;
 import com.playdata.todos.dto.User;
 
@@ -13,6 +14,7 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setStatus(200);
+        History.setHistory(req, resp);
         req.getRequestDispatcher("views/user.html").forward(req,resp);
     }
 
