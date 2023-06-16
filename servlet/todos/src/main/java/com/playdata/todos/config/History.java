@@ -11,15 +11,16 @@ public class History{
     private final static String history = "history";
 
     public static void setHistory(HttpServletRequest req, HttpServletResponse resp){
-
         HttpSession session = req.getSession();
-        if(session.getAttribute("mode")==null)session.setAttribute("mode",false);
-        Boolean mode = (Boolean) session.getAttribute("mode");
+        if(session.getAttribute("histMode")==null)
+            session.setAttribute("histMode",false);
+        Boolean mode = (Boolean) session.getAttribute("histMode");
         if(mode) return;
-
         Cookie[] cookies = req.getCookies();
         String requestURI = req.getRequestURI();
-        int index = 0;
+        int index = session.getAttribute("index")==null
+                ? 0
+                : (Integer) session.getAttribute("index");
         if(cookies == null) {
             resp.addCookie(new Cookie(history + index , requestURI));
             return;
@@ -53,36 +54,22 @@ public class History{
         HttpSession session = req.getSession();
         Boolean mode = (Boolean) session.getAttribute("mode");
         Cookie[] cookies = req.getCookies();
-        if(mode){
-            Integer index = (Integer) session.getAttribute("index");
-            if(index-1 >= 0) {
-                for (int i = 0; i < cookies.length; i++) {
-                    Cookie c = cookies[i];
-                    if (c.getName().contains(history)
-                            &&
-                            index - 1 == Integer.parseInt(c.getName().replace(history, ""))) {
-                        path = c.getValue();
-                        break;
-                    }
-                }
-            }
-            resp.sendRedirect(path);
-        }else{
-            int index = session.getAttribute("index")==null?
-                    0:
-                    (Integer) session.getAttribute("index");
-            for (int i  = 0; i< cookies.length; i++) {
-                Cookie c = cookies[i];
-                if(c.getName().contains(history)
-                    &&index - 1 == Integer.parseInt(c.getName().replace(history,"")
-                        )) {
-                    path = c.getValue();
-                }
-            }
-            resp.sendRedirect(path);
-            session.setAttribute("mode", true);
-        }
 
+        Integer index = (Integer) session.getAttribute("index");
+        if(index-1 >= 0) {
+            for (int i = 0; i < cookies.length; i++) {
+                Cookie c = cookies[i];
+                if (c.getName().contains(history)
+                        &&
+                        index - 1 == Integer.parseInt(c.getName().replace(history, ""))) {
+                    path = c.getValue();
+                    break;
+                }
+            }
+        }
+        resp.sendRedirect(path);
+
+        session.setAttribute("mode", true);
         session.setAttribute("index", (Integer) session.getAttribute("index")-1);
     }
 }
