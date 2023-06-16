@@ -44,7 +44,7 @@ public class UserDao {
             throw new RuntimeException(e);
         }
         if(users.size() != 0){
-//            me = users.get(0);
+            me = users.get(0);
 //            new LogoutThread().start();
             return users.get(0);
         }

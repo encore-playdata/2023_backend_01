@@ -4,10 +4,7 @@ import com.playdata.todos.dao.UserDao;
 import com.playdata.todos.dto.User;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
@@ -23,8 +20,12 @@ public class LoginServlet extends HttpServlet {
         User user = new UserDao().login(username, password);
         Cookie cookie = new Cookie("uid", user.getId().toString());
         Cookie cookie2 = new Cookie("uname", user.getName());
+        cookie.setMaxAge(10);
         resp.addCookie(cookie);
         resp.addCookie(cookie2);
+        HttpSession session = req.getSession();
+        session.setAttribute("uname", user.getName());
+
         if(user != null){
             resp.sendRedirect("/main");
         }else resp.sendRedirect("/user");
