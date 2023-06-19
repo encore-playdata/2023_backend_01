@@ -16,7 +16,11 @@ public class MainServlet extends HttpServlet {
         HttpSession session = req.getSession();
         String uname = (String) session.getAttribute("uname");
         req.setAttribute("uname", uname);
-        req.setAttribute("todolist", new TodoDao().findAll());
+
+        String keyword = req.getParameter("keyword");
+        if(keyword!=null && !keyword.equals("")){
+            req.setAttribute("todolist", new TodoDao().findByKeyword(keyword));
+        }else req.setAttribute("todolist", new TodoDao().findAll());
         req.getRequestDispatcher("/views/main.jsp").forward(req, resp);
 //        History.setHistory(req, resp);
 //        Cookie[] cookies = req.getCookies();

@@ -19,6 +19,9 @@
 
     <%@ include file="todos.jsp"%>
     <%@ include file="todolist.jsp"%>
-
+    <form method="get" action="/main">
+        <input type="text" name="keyword">
+        <input type="submit" value="찾기">
+    </form>
 </body>
 </html>

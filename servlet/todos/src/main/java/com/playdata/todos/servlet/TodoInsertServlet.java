@@ -19,6 +19,6 @@ public class TodoInsertServlet extends HttpServlet {
         String content = req.getParameter("content");
         int uid = (Integer) req.getSession().getAttribute("uid");
         new TodoDao().insert(uid, content);
-        resp.sendRedirect("/main");
+        resp.sendRedirect("/main?keyword="+content);
     }
 }
