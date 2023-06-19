@@ -33,6 +33,8 @@ public class MainServlet extends HttpServlet {
                     "<head>\n" +
                     "    <meta charset=\"UTF-8\">\n" +
                     "    <title>main</title>\n" +
+                    "<link rel=\"stylesheet\"\n" +
+                    "          href=\"/css/login.css\">\n" +
                     "</head>\n" +
                     "<body>\n" +
                     "    <h1>"  + byId.getName() + " 환영합니다.</h1>\n" +

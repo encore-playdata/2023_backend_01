@@ -1,3 +1,7 @@
 input{
     width: 150px;
 }
+body{
+    background-color: red;
+    font-size: large;
+}
