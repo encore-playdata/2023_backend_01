@@ -15,6 +15,7 @@
 
 
     <h1><%=(String) request.getAttribute("uname")%> 환영합니다.</h1>
+    <h1>${uname} 환영합니다.</h1>
 
     <%@ include file="todos.jsp"%>
     <%@ include file="todolist.jsp"%>

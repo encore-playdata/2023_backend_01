@@ -60,5 +60,10 @@ public class TodoDao {
             throw new RuntimeException(e);
         }
     }
+    public TodoJoinUser findById(int id){
+//        TODO: 찾는 로직 완성
+
+        return null;
+    }
 
 }

@@ -8,6 +8,7 @@
         <td>작성자</td>
         <td>작성일</td>
         <td>check</td>
+        <td>수정</td>
     </tr>
 <%
     List<TodoJoinUser> todos = (List<TodoJoinUser>)request.getAttribute("todolist");
@@ -19,6 +20,14 @@
                 <td><%= todo.getCreateAt()%></td>
                 <td><%= todo.getName()%></td>
                 <td><%= todo.isChecked()%></td>
+                <%
+                    if(session.getAttribute("uid") == todo.getUid()){
+                %>
+                <td>
+                    <a href="/todoupdate?todoid=<%= todo.getId()%>">수정</a>
+                </td><%
+                    }
+                %>
             </tr>
         <%
         }
