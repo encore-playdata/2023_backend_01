@@ -1,6 +1,7 @@
 package com.playdata.todos.servlet;
 
 import com.playdata.todos.config.History;
+import com.playdata.todos.dao.TodoDao;
 import com.playdata.todos.dao.UserDao;
 import com.playdata.todos.dto.User;
 
@@ -15,6 +16,7 @@ public class MainServlet extends HttpServlet {
         HttpSession session = req.getSession();
         String uname = (String) session.getAttribute("uname");
         req.setAttribute("uname", uname);
+        req.setAttribute("todolist", new TodoDao().findAll());
         req.getRequestDispatcher("/views/main.jsp").forward(req, resp);
 //        History.setHistory(req, resp);
 //        Cookie[] cookies = req.getCookies();

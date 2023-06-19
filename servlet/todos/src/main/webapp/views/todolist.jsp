@@ -11,7 +11,7 @@
     </tr>
 <%
     List<TodoJoinUser> todos = (List<TodoJoinUser>)request.getAttribute("todolist");
-    if(todos.size() != 0){
+    if(todos!=null && todos.size() != 0){
         for (TodoJoinUser todo :todos) {%>
             <tr>
                 <td><%= todo.getId()%></td>
