@@ -6,10 +6,11 @@
     <title>main</title>
 </head>
 <body>
-    <%
-        if(session.getAttribute("uid")==null)
-            response.sendRedirect("/login");
-    %>
+<%@ include file="header.jsp" %>
+<%--    <%--%>
+<%--        if(session.getAttribute("uid")==null)--%>
+<%--            response.sendRedirect("/login");--%>
+<%--    %>--%>
 
     <img src="/img/ffsf.png">
 
