@@ -48,4 +48,12 @@
     <servlet-name>updateServlet</servlet-name>
     <url-pattern>/userupdate</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>todoInsertServlet</servlet-name>
+    <servlet-class>com.playdata.todos.servlet.TodoInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>todoInsertServlet</servlet-name>
+    <url-pattern>/todoinsert</url-pattern>
+  </servlet-mapping>
 </web-app>
