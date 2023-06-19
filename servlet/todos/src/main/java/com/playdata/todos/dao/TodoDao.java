@@ -62,8 +62,58 @@ public class TodoDao {
     }
     public TodoJoinUser findById(int id){
 //        TODO: 찾는 로직 완성
+        List<TodoJoinUser> todoJoinUsers = new ArrayList<TodoJoinUser>();
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "select\n" +
+                "    t.id,\n" +
+                "    t.create_at ,\n" +
+                "    t.content,\n" +
+                "    t.checked,\n" +
+                "    u.name,\n" +
+                "    u.id uid\n" +
+                "from todos.todos as t\n" +
+                "inner join todos.users as u\n" +
+                "    on t.user_id = u.id\n" +
+                "where t.id = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1,id);
+            ResultSet resultSet = pst.executeQuery();
+            while (resultSet.next()){
+                todoJoinUsers.add(
+                        new TodoJoinUser(
+                                resultSet.getInt("id"),
+                                resultSet.getString("content"),
+                                resultSet.getString("create_at"),
+                                resultSet.getBoolean("checked"),
+                                resultSet.getString("name"),
+                                resultSet.getInt("uid")
+                        )
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return todoJoinUsers.get(0);
+    }
 
-        return null;
+    public void update(int id, int uid, String content){
+        Connection conn = new JdbcConnection().getJdbc();
+        String sql = "update\n" +
+                "    todos.todos\n" +
+                "set\n" +
+                "    todos.content = ?\n" +
+                "where\n" +
+                "    id = ? and user_id = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, content);
+            pst.setInt(2, id);
+            pst.setInt(3, uid);
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

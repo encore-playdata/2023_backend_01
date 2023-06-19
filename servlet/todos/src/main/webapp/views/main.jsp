@@ -19,5 +19,6 @@
 
     <%@ include file="todos.jsp"%>
     <%@ include file="todolist.jsp"%>
+
 </body>
 </html>
